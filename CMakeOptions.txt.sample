@@ -7,6 +7,9 @@
 #Uncomment to generate a Debian package
 #set(CPACK_GENERATOR DEB)
 
+#Uncomment to disable `.mesh` `.meshb` Gamma Mesh Format (GMF) file io
+#set(GEOGRAM_WITH_LM7 OFF)
+
 #Uncomment to disable Hang-Si's tetgen
 #set(GEOGRAM_WITH_TETGEN OFF)
 

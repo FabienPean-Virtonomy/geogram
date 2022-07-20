@@ -30,12 +30,15 @@ if(BUILD_SHARED_LIBS)
 endif()
 
 aux_source_directories(SOURCES "Source Files"               .)
-aux_source_directories(SOURCES "Source Files\\LM6"          LM7)
 aux_source_directories(SOURCES "Source Files\\rply"         rply)
 aux_source_directories(SOURCES "Source Files\\shewchuk"     shewchuk)
 aux_source_directories(SOURCES "Source Files\\zlib"         zlib)
 aux_source_directories(SOURCES "Source Files\\PoissonRecon" PoissonRecon)
 aux_source_directories(SOURCES "Source Files\\xatlas"       xatlas)
+
+if(GEOGRAM_WITH_LM7)
+    aux_source_directories(SOURCES "Source Files\\LM7"          LM7)
+endif()
 
 if(GEOGRAM_WITH_LUA)
    aux_source_directories(SOURCES "Source Files\\lua"          lua)

@@ -580,8 +580,7 @@ namespace GEO {
     };
     
     /************************************************************************/
-
-    
+#ifdef GEOGRAM_WITH_LM7
     /**
      * \brief IO handler for LM5/LM6/Gamma mesh file format
      * \see http://www-roc.inria.fr/gamma/gamma/Membres/CIPD/Loic.Marechal/Research/LM5.html
@@ -1264,7 +1263,7 @@ namespace GEO {
         std::string keyword2name_[GmfLastKeyword+1];
         index_t keyword2nbv_[GmfLastKeyword+1];
     };
-
+#endif
     /************************************************************************/
 
     /**
@@ -4896,8 +4895,10 @@ namespace GEO {
     
 
     void mesh_io_initialize() {
+#ifdef GEOGRAM_WITH_LM7
         geo_register_MeshIOHandler_creator(LMIOHandler,   "mesh");
         geo_register_MeshIOHandler_creator(LMIOHandler,   "meshb");
+#endif
         geo_register_MeshIOHandler_creator(OBJIOHandler,  "obj");
         geo_register_MeshIOHandler_creator(OBJIOHandler,  "eobj");        
         geo_register_MeshIOHandler_creator(OBJ6IOHandler, "obj6");
